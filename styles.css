@@ -1,0 +1,468 @@
+/* Global CSS */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --light-backround-color : #fafafa;
+    --dark-backround-color : #101014;
+    --darker-backround-color : #010107;
+    --accent-color : rgb(253, 104, 111);
+    --secondary-accent-color : rgb(189, 32, 32) ;
+    --dark-color : #04020c;
+    --light-color : #ffefef;
+
+}
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+/*    border: solid rgb(37, 223, 0) 1px; */
+    text-decoration: none;
+    list-style-type: none;
+}
+
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    background-color: var(--darker-backround-color);
+    color: var(--light-color);
+}
+
+main {
+    width: 90%;
+    max-width: 1920px;
+    margin: auto;
+    margin-top: 12rem;
+    min-height: 70vh;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    font-family: "Glory", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--accent-color);
+}
+
+h1 {
+    color: var(--light-color);
+    font-weight: 800;
+    font-size: 4rem;
+    margin-bottom: 4rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+    padding-bottom: 0.8rem;
+    border-bottom: solid 3px var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+h3 {
+    color: var(--light-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+h4 {
+    margin-top: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    padding: 1.2rem 1.6rem;
+    border-radius: 2.5rem;
+    max-width: max-content;
+    border: 0;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+img {
+    max-width: 100%;
+    margin: auto;
+}
+
+address {
+    display: inline-block;
+}
+
+/* Navigation bar */
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--light-backround-color);
+    color: var(--dark-color);
+    width: 100%;
+    padding: 1.2rem 0;
+    text-align: center;
+    
+}
+
+.navContainer {
+    margin: auto;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.navItem {
+    flex-grow: 0;
+}
+
+.titleContainer {
+    display: flex;
+}
+
+.sectionNavContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.sectionNavItem{
+    margin-left: 16px;
+}
+
+.selected {
+    color: var(--accent-color)
+}
+
+
+/*Main grid settings*/
+
+.mainGrid{
+    display: grid;
+    grid-template-areas: 
+    'profile'
+    'demo'
+    'resume'
+    'formation'
+    'image'
+    'contact'
+    ;
+    grid-auto-columns: 1fr;
+    gap: 8rem;
+}
+
+
+@media (min-width: 60em){
+    .mainGrid{
+        display: grid;
+        grid-template-areas: 
+        'profile demo demo'
+        'profile resume resume'
+        'contact formation formation'
+        'contact image image'
+        ;
+        grid-auto-columns: 1fr;
+        gap: 4rem;
+    }
+}
+
+@media (min-width: 100em){
+    .mainGrid{
+        display: grid;
+        grid-template-areas: 
+        'profile demo demo'
+        'profile resume image'
+        'contact formation image'
+        ;
+        grid-auto-columns: 1fr;
+        gap: 8rem;
+    }
+}
+
+/*Profile Section*/
+
+.profileImg {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.profileSection {
+    grid-area: profile;
+    display: flex;
+    flex-direction: column;
+    gap : 1rem;
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.desc {
+    background-color: var(--dark-backround-color);
+    padding: 1.2rem 1.6rem;
+    border-radius: 2.5rem;
+    text-align: center;
+    max-width: fit-content;
+}
+
+.descCTA {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+}
+
+/*Demo Section*/
+
+.demoSection {
+    grid-area: demo;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+#demoEmbededFrame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+
+/*Resume section*/
+.resumeSection {
+    grid-area: resume;
+}
+
+.formationSection {
+    grid-area: formation;
+}
+.studioName {
+    font-weight: bold;
+    color: var(--secondary-accent-color);
+
+}
+
+.resumeUl {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    
+}
+
+.resumeLi {
+    padding: 1.6rem 1.2rem;
+    border-radius: 0.8rem;
+    background-color: var(--dark-backround-color);
+    width: 80%;
+    margin: auto;
+}
+
+/* Illustrative pictures */
+
+.xpImage{
+    grid-area: image;
+}
+
+.slider-wrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 2 / 3;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: center;
+    object-fit: cover;
+}
+
+.sliderNav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.sliderNav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--light-color);
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.sliderNav a:hover {
+    opacity: 1;
+}
+
+.xpImageItem {
+    margin-bottom: 1.2rem;
+}
+
+/*Contact Section */
+ .contactSection{
+    grid-area: contact;
+ }
+
+.contactUl {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.2rem
+}
+.contactUl h3 {
+    flex-basis: 100%;
+}
+
+.contactLi {
+    background-color: var(--dark-backround-color);
+    padding: 1rem 1.2rem;
+    border-radius: 2.5rem;
+    max-width: max-content;
+    display: flex;
+    gap: 0.8rem;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.whatsapp-btn {
+    color: var(--light-color);
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+
+
+/*Footer*/
+
+footer {
+    margin-top: 5vh;
+    padding: 2rem;
+    padding-bottom: 6rem;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+}
+
+footer a {
+    color: var(--light-color);
+}
+
+.footerUl {
+    margin: auto;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* PORTFOLIO PAGE */
+
+
+.portfolioGrid{
+    display: grid;
+    grid-template-areas: 
+    'profile'
+    'portfolio'
+    'contact'
+    ;
+    grid-auto-columns: 1fr;
+    gap: 8rem;
+}
+
+
+/*portfolio section*/
+
+.portfolioSection {
+    grid-area: portfolio;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.portfolioSubgrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.2rem
+}
+
+.portfolioItem{
+    width: 100%;
+    margin : auto;
+}
+.portfolioImg {
+    max-width: 100%;
+}
+
+
+/* Portfolio page media queries*/
+
+@media (min-width: 60em){
+    .portfolioGrid{
+        display: grid;
+        grid-template-areas: 
+        'profile portfolio portfolio'
+        'profile portfolio portfolio'
+        'contact portfolio portfolio'
+        'contact portfolio portfolio'
+        ;
+        grid-auto-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .portfolioItem {
+        width: 45%;
+    }
+}
+
+@media (min-width: 100em){
+    .portfolioGrid{
+        display: grid;
+        grid-template-areas: 
+        'profile portfolio portfolio'
+        'profile portfolio portfolio'
+        'contact portfolio portfolio'
+        ;
+        grid-auto-columns: 1fr;
+        gap: 8rem;
+    }
+
+    .portfolioItem {
+        width: 30%;
+    }
+}
+
+
+
+/*mentions legales page*/
+
+.lightAnchor {
+    color: var(--accent-color);
+}
